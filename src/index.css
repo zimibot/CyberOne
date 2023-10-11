@@ -1,0 +1,280 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  body {
+    font-family: 'Rajdhani';
+    font-style: normal;
+    overflow: hidden;
+    @apply text-[#2A2A2A] bg-[#E3E3E3] dark:bg-backround_primary;
+  }
+}
+
+@layer components {
+  .btn-blue {
+    @apply text-white font-bold px-4 py-2 rounded bg-blue-600 hover:bg-blue-500;
+  }
+
+  .frame {
+    -webkit-app-region: drag;
+  }
+}
+
+.ant-tabs-content.ant-tabs-content-top {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.l7-control-container .l7-left {
+  display: none !important;
+  
+}
+.ant-layout-sider-children {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+div#chartdiv > div > svg > g > g:last-child > g:last-child > g {
+  display: none;
+}
+
+.ant-tabs-top > .ant-tabs-nav::before, .ant-tabs-bottom > .ant-tabs-nav::before, .ant-tabs-top > div > .ant-tabs-nav::before, .ant-tabs-bottom > div > .ant-tabs-nav::before {
+  border-bottom-color: transparent;
+}
+
+.ant-tabs-tab.ant-tabs-tab-active path, .ant-tabs-tab:hover path {
+  fill: #1890ff;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background: transparent;
+  font-weight: bold;
+  color: #2A2A2A!important;
+  opacity: 1!important;
+}
+
+.ant-menu-inline.ant-menu-root .ant-menu-item, .ant-menu-inline.ant-menu-root .ant-menu-submenu-title {
+    opacity: 0.6;
+}
+
+.ant-menu-inline.ant-menu-root .ant-menu-item, .ant-menu-inline.ant-menu-root .ant-menu-submenu-title {
+    color: #2A2A2A;
+    font-size: 1rem;
+}
+
+.ant-menu-item:active, .ant-menu-submenu-title:active {
+  background: transparent;
+}
+
+.code-box-demo {
+  overflow-x: auto;
+}
+
+.code-box-demo .ant-segmented {
+  margin-bottom: 10px;
+}
+
+@keyframes fadeBackground {
+  from { opacity: 0; }
+  to { opacity: 1;}
+}
+
+.fade-in {
+  animation: fadeBackground 1s;
+  transition: 0.5s ease-in-out;
+}
+
+
+.ant-segmented-item{
+  color: #2A2A2A;
+  border: 1px solid transparent;
+}
+
+.ant-segmented-item-selected {
+  background: transparent;
+  border: 0px solid #00A3FF;
+  border-bottom: 2px solid #00A3FF;
+  color: #00A3FF;
+  font-weight: bold;
+}
+
+.ant-segmented, .ant-segmented:not(.ant-segmented-disabled):hover, .ant-segmented:not(.ant-segmented-disabled):focus {
+  background: transparent;
+  font-size: 17px;
+}
+
+.ant-segmented-item:hover, .ant-segmented-item:focus {
+  color: #2A2A2A;
+}
+
+
+.ant-segmented-item-label {
+  padding: 0 20px;
+  
+}
+
+.ant-segmented-thumb {
+  background: transparent;
+  border: 0px solid #00A3FF;
+  border-bottom: 2px solid #00A3FF;
+  box-shadow: 0 0;
+}
+
+span.ant-select-arrow {
+  font-size: large;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ebebeb;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background: #333; 
+}
+
+.loader path {
+  stroke-dasharray: 100;
+  stroke-dashoffset:400;
+  animation: dash 4s linear forwards;
+  fill: #D9D9D9;
+  stroke-width: 1px;
+  stroke:#9e9e9e;
+  animation-iteration-count: infinite;
+  transition:0.5s ease;
+
+}
+
+.ant-table {
+  background: #fafafa;
+  box-shadow: 0px 2px 5px -4px;
+}
+
+.ant-table-thead > tr > th {
+  background: #EBEBEB;
+}
+
+.ant-table-tbody > tr > td {
+  border-top: 1px solid #e3e3e3;
+}
+
+.ant-pagination-disabled > button {
+  background: white;
+  color: #b4b4b4;
+  cursor: no-drop;
+}
+
+.ant-descriptions-bordered .ant-descriptions-item-label {
+  background: transparent;
+}
+
+.ant-descriptions-bordered .ant-descriptions-row {
+  border: 0;
+}
+
+li.ant-menu-item {
+  display: flex;
+}
+.ant-menu-item .ant-menu-item-icon, .ant-menu-submenu-title .ant-menu-item-icon, .ant-menu-item .anticon, .ant-menu-submenu-title .anticon {
+  min-width: auto
+}
+
+li.ant-menu-item {
+  display: flex;
+  align-items: center;
+}
+
+.ant-menu-submenu-title {
+  display: flex;
+  align-items: center;
+}
+
+
+
+.svg-container {
+  width: 5%;
+}
+
+.hex {
+  position: relative;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-delay: var(--anim-delay);
+  transform-origin: 50% 50%;
+  animation-name: growIn;
+}
+
+[dataIndex="1"] {
+  --anim-delay: 300ms;
+}
+
+[dataIndex="2"] {
+  --anim-delay: 400ms;
+}
+
+[dataIndex="3"] {
+  --anim-delay: 500ms;
+}
+
+[dataIndex="4"] {
+  --anim-delay: 600ms;
+}
+
+[dataIndex="5"] {
+  --anim-delay: 700ms;
+}
+
+[dataIndex="6"] {
+  --anim-delay: 800ms;
+}
+
+[dataIndex="7"] {
+  --anim-delay: 900ms;
+}
+
+@keyframes growIn {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.1, 0.1);
+  }
+  20%,
+  70% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+.ant-layout-sider-trigger {
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  height: 48px;
+  color: #1e1e1e;
+  line-height: 48px;
+  text-align: center;
+  background: #dbdbdb;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+
+.ant-menu.ant-menu-inline-collapsed>.ant-menu-item, .ant-menu.ant-menu-inline-collapsed>.ant-menu-item-group>.ant-menu-item-group-list>.ant-menu-item, .ant-menu.ant-menu-inline-collapsed>.ant-menu-item-group>.ant-menu-item-group-list>.ant-menu-submenu>.ant-menu-submenu-title, .ant-menu.ant-menu-inline-collapsed>.ant-menu-submenu>.ant-menu-submenu-title {
+  padding: 0 calc(50% - 12px);
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
