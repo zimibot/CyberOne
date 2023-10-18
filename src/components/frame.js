@@ -38,7 +38,7 @@ export const FrameWindows = () => {
         }
     }
 
-    return (<div className="fixed w-full left-0 z-50 top-0 px-4 bg-[#DFDFDF] dark:bg-frame flex items-center justify-end">
+    return (<div className="fixed w-full left-0 z-50 top-0 px-4 bg-[#DFDFDF] dark:!bg-frame flex items-center justify-end">
         <div className="flex flex-1 frame  w-full justify-center left-0 z-0">
             <Image src={iconLogo}></Image>
         </div>

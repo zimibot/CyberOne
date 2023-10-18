@@ -4,6 +4,9 @@ const MyContext = createContext();
 export const MainContext = () => {
     const [getOptions, setOptions] = useState()
     const [getDays, setDays] = useState()
+    const [config, setConfig] = useState({
+        token: localStorage.getItem("token")
+    })
     const [getCurrentPages, setCurrentPages] = useState({
         page: 1,
         search: "",
@@ -14,6 +17,7 @@ export const MainContext = () => {
     return {
         option: { getOptions, setOptions },
         countDays: { getDays, setDays },
+        configSettings: { config, setConfig },
         page: { getCurrentPages, setCurrentPages }
     }
 

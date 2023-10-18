@@ -89,8 +89,8 @@ export const InsightsCard = ({ inData = [
                 let finishTotal = fourotherTotal ? (fourotherTotal + currentTotal) : (otherTotal + currentTotal)
                 let color = otherTotal !== currentTotal && percents > 100 ? "#00A3FF" : "#ED6D5E"
 
-                return <div className="border w-full flex flex-col p-4 h-full shadow fade-in bg-[#EBEBEB]" key={k}>
-                    <div className="p-4 space-y-3">
+                return <div className="w-full flex flex-col p-4 h-full shadow fade-in bg-[#EBEBEB] dark:bg-dark_input" key={k}>
+                    <div className="p-4 space-y-3 dark:text-white">
                         <div className="flex justify-between items-center">
                             <div className="text-4xl">
                                 {type !== "bytes" || type !== "cachedBytes" ? formatNumber(finishTotal, 2) : formatBytes(finishTotal)}

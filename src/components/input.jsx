@@ -5,10 +5,10 @@ import moment from 'moment/moment';
 
 
 export const Input = ({ placeholder, label, type, icon, register }) => {
-  return <div className="text-left flex flex-col gap-3 text-[#262626] dark:text-white">
+  return <div className="text-left flex flex-col gap-3 text-[#262626] dark:!text-white">
     {label && <label>{label}</label>}
     <div className="relative flex items-center">
-      <input type={type} {...register} className={`w-full py-2 ${icon ? "indent-11 " : "px-3"} shadow backdrop-blur focus-within:outline-none focus-visible:outline-none text-black dark:text-white placeholder:text-black dark:placeholder:text-white dark:bg-dark_input bg-white_input`} placeholder={placeholder} ></input>
+      <input type={type} {...register} className={`w-full py-2 ${icon ? "indent-11 " : "px-3"} shadow backdrop-blur focus-within:outline-none focus-visible:outline-none text-black dark:!text-white placeholder:text-black dark:!placeholder:text-white dark:!bg-dark_input bg-white_input`} placeholder={placeholder} ></input>
       {icon &&
         <div className="absolute flex px-3">
           <img height={20} src={icon}></img>
@@ -105,14 +105,15 @@ export const SelectItem = ({ loading = false, user = false, selectUser = false }
   }, [previousCount, previousDate])
 
   useEffect(() => {
-    setOpt({
+    setOpt(d => ({
+      ...d,
       previousDate: previousDate,
       currentDate: CurrentDate,
       previousPeriodFilter: {
         currentDatePrev: CurrentDatePrev
       },
       fullDay
-    })
+    }))
   }, [previousDate, CurrentDate, CurrentDatePrev, fullDay])
 
 
@@ -129,7 +130,7 @@ export const SelectItem = ({ loading = false, user = false, selectUser = false }
   }
 
 
-  return !user ? <div className="bg-[#EBEBEB] h-14 px-4 flex items-center ">
+  return !user ? <div className="bg-[#EBEBEB] dark:bg-border_primary h-14 px-4 flex items-center ">
     <Select className="text-lg" onChange={onChange} disabled={loading} loading={loading} defaultValue={1} style={{ width: 200 }} bordered={false}
       options={optionItems}>
 

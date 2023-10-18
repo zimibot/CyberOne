@@ -44,13 +44,13 @@ export const ChartLine = ({ data = [], type, color = "#00A3FF", noDate = false, 
         lineWidth: 1,
       },
     },
-    xAxis: {
-      label: {
-        formatter: (value) => {
-          return noDate ? "" : value
-        }
-      }
-    },
+    // xAxis: {
+    //   label: {
+    //     formatter: (value) => {
+    //       return noDate ? "" : value
+    //     }
+    //   }
+    // },
     yAxis: {
       label: {
         formatter: (value) => {

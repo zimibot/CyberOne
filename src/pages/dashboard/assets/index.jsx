@@ -29,7 +29,7 @@ function DashboardAssetsInsight() {
   return (
     <LayoutDashboard classNameItem="flex flex-col gap-6 flex-1" title="ALL ASSET INSIGHTS">
       <Tabs onChange={d => settabIndex(d)} defaultActiveKey={1} className="flex-1 text-base min-h-[2000px] lg:min-h-[200px]" tabBarExtraContent={<div className="flex items-center gap-3">
-        <button className="px-4 h-14 bg-[#EBEBEB] flex items-center gap-4 hover:bg-opacity-50">
+        <button className="px-4 h-14 bg-[#EBEBEB] dark:bg-border_primary dark:text-white flex items-center gap-4 hover:bg-opacity-50">
           <img src={download}></img>
           <span>
             DOWNLOAD

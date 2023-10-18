@@ -89,7 +89,7 @@ const AmMaps = ({ id = "maps", data, otherData  =[] }) => {
         polygonSeries.data = data;
         // Theme
     }, [data, otherData]);
-    return <div id={id} className="w-full h-full absolute p-2"></div>
+    return <div id={id} className="w-full h-full absolute p-2 top-0"></div>
 }
 
 export default AmMaps

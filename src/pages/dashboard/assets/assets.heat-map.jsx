@@ -28,9 +28,9 @@ const AssetsHeatMap = () => {
     return <div className="grid grid-cols-7 h-full">
         <div className="h-full flex flex-col col-span-3">
             <div className="grid grid-cols-3">
-                <div className="p-2 flex items-center justify-center bg-[#EBEBEB]">Country</div>
-                <div className="p-2 flex items-center justify-center bg-[#EBEBEB]">Requests</div>
-                <div className="p-2 flex items-center justify-center bg-[#EBEBEB]">Bandwidth</div>
+                <div className="p-2 flex items-center justify-center bg-[#EBEBEB] dark:bg-border_primary">Country</div>
+                <div className="p-2 flex items-center justify-center bg-[#EBEBEB] dark:bg-border_primary">Requests</div>
+                <div className="p-2 flex items-center justify-center bg-[#EBEBEB] dark:bg-border_primary">Bandwidth</div>
             </div>
             <div className="flex-1 drop-shadow flex flex-col max-h-[600px] overflow-auto">
                 {!Locations.data || Locations.error || !LocationsSparkline.data || LocationsSparkline.error ? <div className=" p-6 h-full w-full">
@@ -39,7 +39,7 @@ const AssetsHeatMap = () => {
             </div>
         </div>
         {/* <div className="h-full flex flex-col">
-            <div className="p-2 flex items-center justify-center bg-[#EBEBEB]">Requests</div>
+            <div className="p-2 flex items-center justify-center bg-[#EBEBEB] dark:bg-border_primary">Requests</div>
             <div className="flex-1 drop-shadow flex justify-center">
                 <div className="flex-col justify-evenly h-full flex w-[65%]">
 
@@ -47,12 +47,12 @@ const AssetsHeatMap = () => {
             </div>
         </div>
         <div className="h-full flex flex-col">
-            <div className="p-2 flex items-center justify-center bg-[#EBEBEB]">Bandwidth</div>
+            <div className="p-2 flex items-center justify-center bg-[#EBEBEB] dark:bg-border_primary">Bandwidth</div>
             <div className="flex-1 drop-shadow">
             </div>
         </div> */}
         <div className="h-full flex flex-col col-span-4">
-            <div className="p-2 flex items-center justify-center bg-[#EBEBEB]">World Heat Map</div>
+            <div className="p-2 flex items-center justify-center bg-[#EBEBEB] dark:bg-border_primary">World Heat Map</div>
             <div className="flex-1 drop-shadow relative">
                 {!Locations.data || Locations.error ? <div className="w-full h-full overflow-hidden loader absolute top-0 left-0 flex items-center justify-center text-3xl text-primary">
                     <LoadingOutlined />

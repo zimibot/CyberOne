@@ -26,7 +26,7 @@ const AssetsNetwork = () => {
 
     return <div className="grid grid-cols-3 h-full">
         <div className="h-full flex flex-col">
-            <div className="p-2 flex items-center justify-center bg-[#EBEBEB]">Client HTTP Version Used</div>
+            <div className="p-2 flex items-center justify-center bg-[#EBEBEB] dark:bg-border_primary">Client HTTP Version Used</div>
             <div className="flex-1 border border-[#EBEBEB] drop-shadow flex flex-col">
                 {!http.data || http.error ?
                     <Skeleton count={4} className={"h-full"} borderRadius={20} containerClassName="grid grid-cols-2 gap-4 flex-1 p-4" />
@@ -34,7 +34,7 @@ const AssetsNetwork = () => {
             </div>
         </div>
         <div className="h-full flex flex-col">
-            <div className="p-2 flex items-center justify-center bg-[#EBEBEB]">Traffic Served Over SSL</div>
+            <div className="p-2 flex items-center justify-center bg-[#EBEBEB] dark:bg-border_primary">Traffic Served Over SSL</div>
             <div className="flex-1 border border-[#EBEBEB] drop-shadow flex justify-center">
                 <div className="flex-col justify-evenly h-full flex w-[65%]">
                     {!ssl.data || ssl.error ?
@@ -46,7 +46,7 @@ const AssetsNetwork = () => {
             </div>
         </div>
         <div className="h-full flex flex-col">
-            <div className="p-2 flex items-center justify-center bg-[#EBEBEB]">Top Content Types</div>
+            <div className="p-2 flex items-center justify-center bg-[#EBEBEB] dark:bg-border_primary">Top Content Types</div>
             <div className="flex-1 border border-[#EBEBEB] drop-shadow">
                 {!topContent.data || topContent.error ?
                     <div className="w-full h-full p-6">

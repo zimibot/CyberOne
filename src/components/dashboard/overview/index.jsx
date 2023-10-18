@@ -6,7 +6,7 @@ export const OverviewCard = ({ inData = [], chartData= [] }) => {
     return <div className="flex-1 text-lg h-full ">
         <div className={`grid grid-cols-2 h-full min-h-[500px] gap-4 flex-1 ${inData.length === 2 ? "xl:grid-cols-2" : "xl:grid-cols-5"} `}>
             {inData.map(({ name, type, currentTotal }, k) => {
-                return <div className="border w-full flex flex-col p-4 h-full shadow fade-in bg-[#EBEBEB]" key={k}>
+                return <div className="dark:text-white w-full flex flex-col p-4 h-full shadow fade-in bg-[#EBEBEB] dark:bg-dark_input" key={k}>
                     <div className="p-4 space-y-3">
                         <div className="flex justify-between items-center">
                             <div className="text-4xl">

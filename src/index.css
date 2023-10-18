@@ -3,10 +3,15 @@
 @tailwind utilities;
 @layer base {
   body {
-    font-family: 'Rajdhani';
+    font-family: 'Rajdhani' !important;
     font-style: normal;
     overflow: hidden;
-    @apply text-[#2A2A2A] bg-[#E3E3E3] dark:bg-backround_primary;
+    @apply text-[#2A2A2A] bg-[#E3E3E3] dark:!bg-backround_primary;
+  }
+
+  
+  form label {
+    @apply text-lg w-full;
   }
 }
 
@@ -18,6 +23,10 @@
   .frame {
     -webkit-app-region: drag;
   }
+}
+
+.ant-layout .ant-layout-sider {
+  background: white;
 }
 
 .ant-tabs-content.ant-tabs-content-top {
@@ -276,5 +285,20 @@ li.ant-menu-item {
 @keyframes dash {
   to {
     stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .ant-menu-inline.ant-menu-root .ant-menu-item, .ant-menu-inline.ant-menu-root .ant-menu-submenu-title, .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    color: white!important;
+  }
+  body {
+    color: white!important;
+  }
+  .ant-tabs .ant-tabs-tab {
+    color: white;
+  }
+  .ant-select-single .ant-select-selector {
+    color: white;
   }
 }

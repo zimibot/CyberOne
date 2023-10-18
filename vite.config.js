@@ -1,18 +1,20 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
+import dns from 'dns'
 
+dns.setDefaultResultOrder('verbatim')
 // https://vitejs.dev/config/
 export default defineConfig({
   base: './',
   server: {
     host: 'localhost',
-    port: '8000'
+    port: '8000',
   },
- 
+
   build: {
     optimization: {
-      minimize: false,
+      minimize: true,
       splitChunks: {
         chunks: 'all',
         name: true
@@ -24,5 +26,6 @@ export default defineConfig({
     outDir: path.resolve(__dirname, 'build'),
     // chunkSizeWarningLimit: 9000,
   },
-  plugins: [react()]
+  plugins: [react()],
+  
 })

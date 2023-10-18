@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
-import { Layout, Menu } from 'antd';
-import logo from '../assets/images/logo.svg'
+import React, { useContext, useState } from 'react'
+import { Layout, Menu, Tooltip } from 'antd';
+import Logo from '../assets/images/navbar_logo.png'
+
 import assets from '../assets/images/icon/dashboard/assets.svg'
 import insight from '../assets/images/icon/dashboard/assets.insight.svg'
 import cl from '../assets/images/icon/cloudflare.svg'
@@ -8,17 +9,19 @@ import lonceng from '../assets/images/icon/lonceng.svg'
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import useBreadcrumbs from "use-react-router-breadcrumbs";
 import Skeleton from 'react-loading-skeleton';
-import { ImportOutlined, RightOutlined,  } from '@ant-design/icons';
+import {  LogoutOutlined, RightOutlined, } from '@ant-design/icons';
 import packageJson from '../../package.json';
+import MyContext from '../helpers/contex';
 
 const { Content, Sider } = Layout;
 
 
-export const LayoutDashboard = ({ children, title, classNameItem = "", type }) => {
+export const LayoutDashboard = ({ children, title, classNameItem = "" }) => {
     const breadcrumbs = useBreadcrumbs();
 
     const [active, setactived] = useState(false);
     const location = useLocation()
+    const { configSettings } = useContext(MyContext)
 
     let navigate = useNavigate()
     let param = window.location.hash.split("/").pop()
@@ -77,15 +80,17 @@ export const LayoutDashboard = ({ children, title, classNameItem = "", type }) =
 
     ];
 
+    const onQuit = () => {
+        localStorage.removeItem("token")
+        configSettings.setConfig(a => ({ ...a, token: null }))
+    }
 
     return (
         <div className="h-screen overflow-y-auto relative" id="container">
             <Layout className=" h-full w-full !bg-transparent min-h-screen overflow-auto">
-                <div className="bg-[#EBEBEB] dark:bg-backround_secondary px-6 py-2  flex items-center justify-between shadow" style={{
-                    borderBottom: "1px solid #ddd"
-                }}>
-                    <div className="flex text-3xl">
-                       CYBER ONE
+                <div className="bg-[#EBEBEB] dark:!bg-backround_secondary px-6 py-2  flex items-center justify-between shadow">
+                    <div className="flex">
+                       <img className="w-[250px]" src={Logo}></img>
                     </div>
                     <div className="flex items-center gap-4">
                         <div className="border border-backround_secondary border-opacity-20 shadow p-5 flex hover:bg-white hover:bg-opacity-20">
@@ -96,19 +101,20 @@ export const LayoutDashboard = ({ children, title, classNameItem = "", type }) =
                                 <div>CREOENGINE</div>
                                 <div className="text-xs bg-gray-500 p-1 text-white font-bold">3 YEARS PROTECTED</div>
                             </div>
-                            <div className="flex items-center px-2">
-                                <ImportOutlined></ImportOutlined>
-                            </div>
+                            <Tooltip title="LOG OUT">
+                                <div className="flex items-center px-2 cursor-pointer" onClick={onQuit}>
+                                    <LogoutOutlined></LogoutOutlined>
+                                </div>
+                            </Tooltip>
                         </div>
                     </div>
                 </div>
-                <Layout className="!bg-transparent overflow-hidden flex-1 flex-row">
-                    <Sider collapsible trigger={null} collapsed={active} className="bg-[#EBEBEB] dark:bg-backround_secondary flex flex-col !flex-1 shadow min-h-[80vh] relative" >
+                <Layout className="!bg-transparent overflow-y-auto overflow-x-hidden flex-1 flex-row">
+                    <Sider collapsible trigger={null} collapsed={active} className="bg-[#EBEBEB] dark:!bg-backround_secondary flex flex-col !flex-1 shadow min-h-[80vh] relative" >
                         {items ?
                             <Menu mode="inline"
                                 defaultSelectedKeys={[param]}
                                 defaultOpenKeys={[location?.state?.name]}
-                                theme="light"
                                 className=" bg-transparent flex-1 sticky" style={{
                                     borderRight: 0,
                                 }}
@@ -135,9 +141,9 @@ export const LayoutDashboard = ({ children, title, classNameItem = "", type }) =
                             }
                         </div>
                     </Sider>
-                    <Layout className="bg-transparent overflow-hidden " >
-                        <div className="flex flex-col flex-1 overflow-auto" style={{
-                            padding: '10px 50px 50px',
+                    <Layout className="bg-transparent overflow-y-auto overflow-x-hidden " >
+                        <div className="flex flex-col flex-1 " style={{
+                            padding: '10px 50px 30px',
                         }}>
                             <div className="pb-3 pt-4 flex gap-3">
 
@@ -147,7 +153,7 @@ export const LayoutDashboard = ({ children, title, classNameItem = "", type }) =
                                     </Link>
                                 })}
                             </div>
-                            <h1 className="pb-4 text-3xl uppercase">{title}</h1>
+                            <h1 className="pb-4 text-3xl uppercase dark:text-white">{title}</h1>
                             <Content
                                 className="site-layout-background flex flex-col relative flex-1"
                                 style={{
@@ -164,7 +170,7 @@ export const LayoutDashboard = ({ children, title, classNameItem = "", type }) =
                             </Content>
                         </div>
                         <div className="flex items-end ">
-                            <Layout className="h-[60px] border-t border-t-border_primary items-end justify-center flex px-6 fade-in bg-[#EBEBEB] dark:bg-backround_secondary shadow">
+                            <Layout className="h-[60px] border-t border-t-border_primary items-end justify-center flex px-6 fade-in bg-[#EBEBEB] dark:!bg-backround_secondary shadow">
                                 <div>
                                     <img src={cl}></img>
                                 </div>
